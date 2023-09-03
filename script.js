@@ -10,8 +10,15 @@ function remove(){
 
 function calculate(){
     var text =document.getElementById('output').value
-    let result = eval(text)
-    document.getElementById('output').value = result
+    try {
+     let result = eval(text)
+        document.getElementById('output').value = result 
+    } catch (e) {
+    if (e instanceof SyntaxError) {
+        alert(e.message);
+    }
+}
+   
 }
 
 function clearText(){
