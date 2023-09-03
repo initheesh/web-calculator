@@ -7,16 +7,6 @@
     font-family: 'Raleway', cursive;
 }
 
-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(#e66465, #9198e5);
-    min-height: 100vh;
-    /* Use min-height to ensure full screen coverage */
-    width: 100%;
-}
-
 .container {
     background: rgba(255, 255, 255, 0.35);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -25,17 +15,21 @@ body {
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
     padding: 15px;
-    max-width: 400px;
-    /* Limit container width for larger screens */
+    margin: 20px;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(#e66465, #9198e5);
+    height: 100vh;
     width: 100%;
-    margin: 0 auto;
-    /* Center the container horizontally */
 }
 
 .output {
     display: flex;
-    justify-content: flex-end;
-    /* Adjust alignment for smaller screens */
+    justify-content: end;
     margin-bottom: 10px;
 }
 
@@ -44,33 +38,21 @@ body {
     text-align: right;
     outline: none;
     height: 4rem;
-    font-size: 3vw;
-    /* Responsive font size */
+    font-size: 35px;
     background-color: rgba(0, 0, 0, 0.2);
     border: none;
     color: white;
     font-weight: bold;
     border-radius: 5px;
+    padding: 2px;
 }
 
 .btns {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr));
-    grid-template-rows: repeat(auto-fill, minmax(6rem, 1fr));
-    /* Adjust column layout */
+    grid-template-columns: repeat(4, 6rem);
+    grid-template-rows: repeat(5, 6rem);
     grid-gap: 5px;
 }
-
-/* Add media queries for different screen sizes */
-@media (max-width: 768px) {
-    .btns {
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(4, 1fr);
-        /* Adjust for smaller screens */
-    }
-}
-
-/* You can add more media queries as needed */
 
 .span-2 {
     grid-column: span 2;
@@ -78,9 +60,9 @@ body {
 
 button {
     outline: none;
-    font-size: 2vw;
-    /* Responsive font size */
+    font-size: 1rem;
     border: 1px solid white;
+    font-size: 2rem;
     border-radius: 4px;
     font-weight: 600;
     color: #e6646599;
@@ -90,4 +72,15 @@ button:hover {
     background-color: rgba(255, 255, 255, 0.1);
     cursor: pointer;
     color: white;
+}
+
+@media (max-width: 768px) {
+    .btns {
+        grid-template-columns: repeat(4, 5rem);
+        grid-template-rows: repeat(5, 5rem);
+        /* Adjust for smaller screens */
+    }
+    .output>input{
+        font-size: 25px;
+    }
 }
